@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>CKEditor</title>
+        <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <textarea name="editor1"></textarea>
+    <button id="btnSubmit">Submit</button>
+</body>
+<script>
+    CKEDITOR.replace( 'editor1' );
+    $('#btnSubmit').click(()=>{
+        var value = CKEDITOR.instances['editor1'].getData();
+        console.log(value)
+    })
+</script>
+
+</html>
