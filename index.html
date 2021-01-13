@@ -12,7 +12,7 @@
         <textarea name="editor1">
             {{content}}
         </textarea>
-        <button id="btnSubmit">Submit</button>
+        <button @click="submit()">Submit</button>
     </div>
 </body>
 <script>
@@ -21,12 +21,14 @@
         data:{
             content:"<div class=\"_7jyr\"><div role=\"button\" tabindex=\"0\"><div class=\"_4ik4 _4ik5\" ><div>CHƯA TỚI 1 TỶ*, CÓ NHÀ VINHOMES, KHU ĐÔ THỊ ĐÁNG SỐNG NHẤT HÀ NỘI . Chưa bao giờ trở thành cư dân Vinhomes lại dễ dàng đến thế, nhận nhà ở ngay<br/> 🎉Căn hộ 63m2, 2PN + 1, 2WC trả trước 690tr <br/> 🌟 Căn hộ 54m2, 2PN+1, 1WC trả trc từ 520tr <br/> 🌟 Căn hộ 43m2, 1PN+1, 1WC trả trước từ 400tr<br/> 🌟 Căn hộ 28-36m2 Studio 1PN trả trước từ 300tr<br/> ⚡️Hỗ trợ trả góp 0% lên đến 26 tháng<br/> ⚡️ Cho vay lên đến 80% trong vòng 35 năm ( dài nhất thị trường)<br/> ⚡️Tặng Voucher mua xe Vinfast lên tới 200 triệu (Không mua có thể bán lại)<br/> Nhận thẻ ra vào dự án ngay sau khi nhận hợp đồng mua bán<br/> Hưởng toàn bộ tiện ích 5* ngay khi cọc thành công căn hộ bao gồm rất rất nhiều như: Công viên trung tâm, Biển hồ nhân tạo bờ cát trắng BBQ bên bờ hồ, Bể bơi, sân tập thể thao, sân tập thể thao.... tất cả tiện ích chỉ dành cho cư dân Vinhomes Ocean Park<br/> 👉 Bảng hàng giá gốc chủ đầu tư<br/> 👉 Bảng giá 20 căn view đẹp nhất phân khu<br/> 👉 Bảng tính trả góp hàng tháng<br/> 👉 Nhận tư vấn trực tiếp từ Phòng Kinh Doanh Vinhomes</div></div></div></div>"
         },
-        mounted(){
-            CKEDITOR.replace( 'editor1' );
-            $('#btnSubmit').click(()=>{
+        methods:{
+            submit(){
                 var value = CKEDITOR.instances['editor1'].getData();
                 console.log(value)
-            })
+            }
+        },
+        mounted(){
+            CKEDITOR.replace( 'editor1' );
         }
     })
 </script>
