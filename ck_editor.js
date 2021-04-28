@@ -4,9 +4,9 @@ Vue.component('ck_editor_component',{
             // loading: true,
         }
     },
-    props:{content_html:String},
+    props:{content_html:String,name_textarea:String},
     template:`<template>
-        <textarea name="editor1">
+        <textarea :name="name_textarea">
             {{content_html}}
         </textarea>
     </template>`,
@@ -18,6 +18,6 @@ Vue.component('ck_editor_component',{
     },
     mounted:function(){
         console.log(this.content_html)
-        CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace( this.name_textarea );
     },
 })
